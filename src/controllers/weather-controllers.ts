@@ -29,7 +29,7 @@ export const getWeather = async (
     if (location) return location;
     if (user?.location) return user.location;
     const client_ip: any = req.headers["X-Forwarded-For"];
-    console.log(client_ip);
+    console.log(req.headers);
 
     const resIp = await getLocationFromIp(client_ip);
     return resIp?.city;
