@@ -14,7 +14,7 @@ export const getWeather = async (
   const { WEATHERMAP_API_KEY } = process.env;
   const WEATHER_API_PATH = "https://api.openweathermap.org/data/2.5/weather";
   const WEATHER_ICON_PATH = "https://openweathermap.org/img/wn";
-  const client_ip = req.ip;
+  const client_ip = req.headers["x-forwarded-for"];
 
   let user: any;
   try {
