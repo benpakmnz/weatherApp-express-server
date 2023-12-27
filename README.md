@@ -2,7 +2,7 @@
 
 This project was created using Node.js and express written in TypeScript
 Backend is handled by mongoDB
-You can find its related client app @ [weatherApp-react-client](https://github.com/benpakmnz/weatherApp-react-client)
+Related Client app @ [weatherApp-react-client](https://github.com/benpakmnz/weatherApp-react-client)
 
 ## Core NPM Module
 
