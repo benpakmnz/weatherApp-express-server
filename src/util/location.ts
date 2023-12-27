@@ -3,10 +3,11 @@ import dotenv from "dotenv";
 import { BadRequestError } from "../common/errors/bad-request-error";
 
 dotenv.config();
+const ipapiBase = "https://ipapi.co";
 
-export const getLocationFromIp = async (ip: string) => {
+export const getLocationFromIp = async (ip?: string) => {
   let response;
-  response = await axios.get(`https://ipapi.co/${ip}/json`);
+  response = await axios.get(`${ipapiBase}/${ip ? ip + "/json" : "json"}`);
   const data = response.data;
 
   if (!data) {

@@ -14,9 +14,8 @@ export const getWeather = async (
   const { WEATHERMAP_API_KEY } = process.env;
   const WEATHER_API_PATH = "https://api.openweathermap.org/data/2.5/weather";
   const WEATHER_ICON_PATH = "https://openweathermap.org/img/wn";
-  const client_ip: any = req.headers["x-forwarded-for"];
-  console.log(req.headers);
-  console.log(client_ip);
+  const client_ip = req.ip;
+
   let user: any;
   try {
     user = await handleFindById(uid);
