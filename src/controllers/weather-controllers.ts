@@ -28,7 +28,9 @@ export const getWeather = async (
   const handleLocation = async () => {
     if (location) return location;
     if (user?.location) return user.location;
-    const resIp = await getLocationFromIp();
+    const { client_ip }: any = req.headers["X-Envoy-External-Address"];
+
+    const resIp = await getLocationFromIp(client_ip);
     return resIp?.city;
   };
 

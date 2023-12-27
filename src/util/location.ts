@@ -3,10 +3,10 @@ import dotenv from "dotenv";
 import { BadRequestError } from "../common/errors/bad-request-error";
 
 dotenv.config();
-const USER_LOCAL_LOCATION_PATE = "https://ipapi.co/json";
-export const getLocationFromIp = async () => {
+
+export const getLocationFromIp = async (ip: string) => {
   let response;
-  response = await axios.get(`${USER_LOCAL_LOCATION_PATE}`);
+  response = await axios.get(`https://ipapi.co/${ip}/json`);
   const data = response.data;
 
   if (!data) {
